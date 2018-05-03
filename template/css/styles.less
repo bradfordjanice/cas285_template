@@ -1,0 +1,145 @@
+/*
+File Name: styles.less
+Date: 04/18/18
+Programmer: Janice Bradford
+Project: JSB Animation Studios Portfolio
+*/ 
+
+@import "mixins.less"; 
+
+/* use to outline blocks for styling and debugging
+* { outline: 1px solid red !important } */
+
+/* STYLES */
+
+/* extra small, phones < 768px*/
+
+body { 
+	#project_mixins > .common_properties(@bg_color, @text_color, @default_font_family, @m_font_size, @body_margin, @body_padding, @line_ht);
+}
+
+h1,
+h2,
+h3 {
+	font-family: @hdr_font_family; 
+	color: @hdr_color; 
+}
+
+h1 {
+	font-size: @h1_font_size;
+}
+
+h2 {
+	font-size: @h2_font_size;
+}
+
+h3 {
+	font-size: @h3_font_size;
+}
+
+p {
+	font-family: @default_font_family; 
+	color: @text_color;  
+	font-size: @m_font_size;
+} 
+
+.container {
+	display: grid;
+	grid-template-rows: auto auto auto auto;
+}
+
+.header {
+	background-color: @bg_color;
+	text-align: center; 
+	padding: 10px; 
+	overflow: hidden; 
+}
+
+.content {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 10px; 
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.content-block { 
+	//border: 1px solid @text_color;
+	//background-color: aliceblue; 
+}
+
+.sidebar {
+	grid-row-start: 2;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: aliceblue;
+}
+
+.copyright {
+	font-size: @copyright_font_size; 
+	line-height: 1.1em; 
+	text-align: center;
+}
+
+.copyright a:link {
+	text-decoration: none;
+	color: @text_color; 
+}
+
+.copyright a:hover {
+	text-decoration: underline;
+}
+
+/* small devices, tablets 768px and up */
+
+@media only screen and (min-width: @screen_sm_min) {
+			
+	.content {
+		display: grid;
+		grid-template-columns: 25% 1fr; 
+		grid-gap: 15px;
+		padding-left: 15px;
+		padding-right: 15px; 
+	} 
+	
+	.sidebar {
+		grid-row-start: 1;
+	}
+	
+	p {
+		font-size: @t_font_size;
+	}
+	
+}
+
+/* medium devices, desktops 992px and up */
+
+@media only screen and (min-width: @screen_md_min) {
+	
+.content {
+	display: grid;
+	grid-template-columns: 25% 1fr; 
+	grid-gap: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+	
+	p { 
+		font-size: @d_font_size; 
+	}
+
+}
+
+/* large devices, large desktops 1200px and up */
+
+@media only screen and (min-width: @screen_lg_min) {
+	
+	.content {
+		display: grid;
+		grid-template-columns: 30% 1fr; 
+		grid-gap: 30px;
+		padding-left: 50px;
+		padding-right: 50px; 
+	}
+	
+}
